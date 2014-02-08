@@ -1,4 +1,8 @@
 apply plugin: 'groovy'
+apply plugin: 'application'
+apply plugin: 'wrapper'
+
+mainClassName = 'afabian.dsl.MemoDsl'
 
 repositories {
 	mavenCentral()
@@ -7,4 +11,8 @@ repositories {
 dependencies {
 	compile "org.codehaus.groovy:groovy-all:2.2.0"
 	testCompile "junit:junit:4.11"
+}
+
+wrapper {
+	gradleVersion = '1.10'
 }

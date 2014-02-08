@@ -8,6 +8,15 @@ class MemoDsl {
 	String body
 	def sections = []
 
+	def static void main(String[] args) {
+		def memoFile = file(args[0])
+		if(!memoFile.exists()) {
+			println "Input file error (add as argument)"
+			return
+		}
+		println memoFile.canonicalPath
+	}
+
 	def static make(clojure) {
 		MemoDsl memoDsl = new MemoDsl()
 		clojure.delegate = memoDsl
