@@ -31,6 +31,10 @@ class MemoDsl {
 		sections << section
 	}
 
+	def getXml() {
+		doXml(this)
+	}
+
 	private static doXml(MemoDsl memoDsl) {
 		def writer = new StringWriter()
 		def xml = new MarkupBuilder(writer)
